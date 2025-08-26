@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AI验证码自动识别填充-自用版
 // @namespace    https://github.com/anghunk/UserScript
-// @version      1.0.11
+// @version      1.0.12
 // @author       knight
 // @description  自动识别网页上的验证码并填充到输入框中，点击识别图标触发识别。
 // @license      Apache-2.0
@@ -23,7 +23,7 @@
   'use strict';
 
   const name = "CAPTCHA-automatic-recognition";
-  const version = "1.0.11";
+  const version = "1.0.12";
   const author = "knight";
   const description = "Automatically recognize the CAPTCHA on the webpage and fill it into the input box, click the recognition icon to trigger recognition.";
   const type = "module";
@@ -3201,7 +3201,6 @@
         }
         let result = "";
         try {
-          this.showToast("正在识别验证码...", "info");
           switch (this.settings.apiType) {
             case "openai":
               result = await this.recognizeWithOpenAI(base64Image);
@@ -3783,7 +3782,6 @@
               this.showToast(`验证码已识别：${text} (已复制到剪贴板)`, "success");
             }
           } else {
-            this.showToast(`验证码已识别：${text}`, "success");
           }
           icon.classList.remove("captcha-recognition-loading");
           icon.classList.add("captcha-recognition-success");
