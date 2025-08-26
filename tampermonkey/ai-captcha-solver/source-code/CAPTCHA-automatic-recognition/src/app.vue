@@ -822,7 +822,7 @@ export default {
       let result = "";
       try {
         // console.log("开始识别验证码，使用 API 类型:", this.settings.apiType);
-        this.showToast("正在识别验证码...", "info");
+        // this.showToast("正在识别验证码...", "info");
 
         switch (this.settings.apiType) {
           case "openai":
@@ -1647,7 +1647,7 @@ export default {
             this.showToast(`验证码已识别：${text} (已复制到剪贴板)`, "success");
           }
         } else {
-          this.showToast(`验证码已识别：${text}`, "success");
+       //   this.showToast(`验证码已识别：${text}`, "success");
         }
 
         // 更新图标状态为成功
